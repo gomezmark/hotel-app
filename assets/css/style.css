@@ -1,0 +1,8 @@
+.m-search-box {
+  background: #fff url('~assets/images/denys.jpg') center no-repeat;
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
