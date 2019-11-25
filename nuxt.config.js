@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }
     ]
   },
   /*
@@ -25,14 +26,18 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/style.css'
+    '~/assets/css/style.css',
+    '~/assets/css/helper.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '~/plugins/vue-moment.js',
-    '~/plugins/vuetify.js',
+    {
+      src: '~/plugins/v-calendar.js',
+      ssr: false
+    },
     {
       src: '~/filter/filter.js',
       ssr: false
@@ -89,6 +94,8 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
+      }
     }
   }
 }
