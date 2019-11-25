@@ -32,6 +32,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/vue-moment.js',
+    '~/plugins/vuetify.js',
     {
       src: '~/filter/filter.js',
       ssr: false
