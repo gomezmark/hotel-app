@@ -74,10 +74,15 @@ module.exports = {
     theme: {
       dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+        light: {
+          primary: '#5398d9',
+          secondary: '#d96b0c',
+          tertiary: '#a53a3b',
+          accent: '#f4e3b1',
+          gray: '#b3b3b3',
+          error: '#b71c1c',
+          text: '#4d4d4d',
+          loader: '#f0eeee',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,

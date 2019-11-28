@@ -28,7 +28,7 @@
                   </v-layout>
                   <v-layout row wrap mx-0 relative>
                     <v-flex md6>
-                      <v-card>
+                      <v-card @click="toggleCalendar = !toggleCalendar">
                         <v-card-text>
                           <p>Check In</p>
                           <search-date :date="selectedDate.start" />
@@ -36,14 +36,16 @@
                       </v-card>
                     </v-flex>
                     <v-flex md6>
-                      <v-card>
+                      <v-card @click="toggleCalendar = !toggleCalendar">
                         <v-card-text>
                           <p>Check Out</p>
                           <search-date :date="selectedDate.end" />
                         </v-card-text>
                       </v-card>
                     </v-flex>
-                    <div class="m-search-date-container">
+                    <div
+                      class="m-search-date-container"
+                      :class="{ 'active': toggleCalendar }">
                       <p>Choose Dates</p>
                       <vue-date-picker
                         v-model="selectedDate"
@@ -101,7 +103,7 @@
                         block
                         large
                         height="65"
-                        color="success">
+                        color="secondary">
                         Search
                       </v-btn>
                     </v-flex>
@@ -111,6 +113,40 @@
             </v-layout>
           </v-flex>
         </v-layout>
+      </page-container>
+    </div>
+    <div class="white">
+      <page-container class="my-5">
+        <v-container grid-list-xl>
+          <v-layout row wrap>
+            <v-flex xs12 text-sm-center>
+              <p class="headline primary--text">Top Destination</p>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex md4>
+              <v-card>
+                <v-card-text>
+                  London
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex md4>
+              <v-card>
+                <v-card-text>
+                  Maldives
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex md4>
+              <v-card>
+                <v-card-text>
+                  Tokyo
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
       </page-container>
     </div>
   </div>
@@ -127,6 +163,7 @@ export default {
       rooms: 1,
       adults: 2,
       children: 0,
+      toggleCalendar: false,
       selectedDate: {
         start: this.$moment()._d,
         end: this.$moment().add(1, 'day')._d
