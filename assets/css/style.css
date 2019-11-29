@@ -1,5 +1,5 @@
 .m-search-box {
-  /* background: #fff url('~assets/images/denys.jpg') center no-repeat; */
+  background: #fff url('~assets/images/denys.jpg') center no-repeat;
   background-size: cover;
   height: calc(100vh - 100px);
   display: flex;

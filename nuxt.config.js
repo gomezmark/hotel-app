@@ -41,6 +41,10 @@ module.exports = {
     {
       src: '~/filter/filter.js',
       ssr: false
+    },
+    {
+      src: '~/utils/globalRules.js',
+      ssr: false
     }
   ],
   /*
@@ -98,9 +102,27 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-      }
+    extend (config, { isDev, isClient }) {
+      config.module.rules.push(
+        // {
+        //   test: /\.(png|jpe?g|gif|svg|webp)$/,
+        //   loader: 'url-loader',
+        //   query: {
+        //     limit: 1000, // 1kB
+        //     name: 'img/[name].[hash:7].[ext]'
+        //   }
+        // },
+        // {
+        //   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        //   loader: 'url-loader',
+        //   query: {
+        //     limit: 1000, // 1kB
+        //     name: 'fonts/[name].[hash:7].[ext]'
+        //   }
+        // }
+      )
+      // Sets webpack's mode to development if `isDev` is true.
+      // if (isDev) { config.mode = 'development' }
     }
   }
 }

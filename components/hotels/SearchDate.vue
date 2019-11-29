@@ -12,8 +12,7 @@
     </div>
     <div>
       <v-icon
-        color="primary"
-        disabled
+        color="secondary"
         left
         right
         :size="40">
