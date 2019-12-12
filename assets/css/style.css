@@ -1,5 +1,5 @@
 .m-search-box {
-  background: #fff url('~assets/images/denys.jpg') center no-repeat;
+  /* background: #fff url('~assets/images/denys.jpg') center no-repeat; */
   background-size: cover;
   height: calc(100vh - 100px);
   display: flex;
@@ -34,4 +34,15 @@
   position: absolute;
   right: 13px;
   top: -18px;
+}
+
+.m-footer-note a {
+  color: #ccc !important;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+
+.m-footer-note a:hover {
+  color: #fff !important;
 }

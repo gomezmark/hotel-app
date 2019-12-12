@@ -4,7 +4,7 @@
     dark
   >
     <v-toolbar-title>Title</v-toolbar-title>
-    <v-spacer></v-spacer>
+    <v-spacer />
     <v-btn
       flat
       depressed
@@ -22,18 +22,16 @@
           <p class="headline mb-0">Login</p>
         </v-card-title>
         <v-layout row wrap>
-          <template>
+          <no-ssr>
             <v-form v-model="valid" ref="form" lazy-validation>
               <v-text-field
                 label="E-mail"
                 v-model="email"
-                :rules="global.rules.email"
                 required
               ></v-text-field>
               <v-text-field
                 label="Password"
                 v-model="email"
-                :rules="global.rules.required"
                 required
               ></v-text-field>
               <v-btn
@@ -44,12 +42,10 @@
               </v-btn>
               <v-btn @click="clear">clear</v-btn>
             </v-form>
-          </template>
-          
+          </no-ssr>
           <!--
           <script>
           import axios from "axios";
-          
           export default {
             data: () => ({
               valid: true,
@@ -61,7 +57,6 @@
               items: ["Item 1", "Item 2", "Item 3", "Item 4"],
               checkbox: false
             }),
-          
             methods: {
               submit() {
                 if (this.$refs.form.validate()) {

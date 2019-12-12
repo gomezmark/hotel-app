@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "New template for building nuxt projects",
   "author": "Mark Gomez",
+  "keywords": ["nuxt-quill","vue quill", "nuxt quill-better-table"],
+  "bugs": "https://github.com/gomezmark/nuxt-quill-template/issues",
+  "files": ["*"],
+  "repository": {
+    "url": "https://github.com/gomezmark/nuxt-quill-template",
+    "type": "git"
+  },
   "private": true,
+  "license": "MIT",
   "config": {
     "nuxt": {
       "host": "0.0.0.0",

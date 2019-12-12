@@ -43,8 +43,7 @@ module.exports = {
       ssr: false
     },
     {
-      src: '~/utils/globalRules.js',
-      ssr: false
+      src: '~/utils/globalRules.js'
     }
   ],
   /*

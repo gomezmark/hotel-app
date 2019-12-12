@@ -6,10 +6,12 @@
     </v-content>
 
     <v-footer
-      :fixed="fixed"
-      app
+      color="grey"
+      dark
     >
-      <span>&copy; 2019</span>
+      <v-layout row wrap justify-center>
+        &copy; 2019. Allrights Reserved
+      </v-layout>
     </v-footer>
   </v-app>
 </template>

@@ -51,7 +51,16 @@
                       :class="{ 'active': toggleCalendar }"
                       class="m-search-date-container"
                     >
-                      <p>Choose Dates</p>
+                      <v-layout
+                        class="ma-0"
+                        row
+                        wrap
+                      >
+                        <p>Choose Dates</p>
+                        <v-spacer></v-spacer>
+                        <v-icon>close</v-icon>
+                      </v-layout>
+
                       <vue-date-picker
                         v-model="selectedDate"
                         :is-inline="true"
@@ -223,16 +232,16 @@
           </v-flex>
           <v-flex md8>
             <v-container grid-list-xl>
-              <v-layout row wrap justify-center>
-                <template v-for="item in 3">
+              <v-layout row wrap justify-center align-center style="min-height:300px;">
+                <template v-for="item in features">
                   <v-flex
                     md4
                     :key="`sol-${item}`">
                     <v-card>
                       <v-card-text>
                         <v-icon>hotel</v-icon>
-                        <p>Multiple Properties</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                        <p class="title primary--text mb-3">{{ item.title }}</p>
+                        <span>{{ item.desc }}</span>
                       </v-card-text>
                     </v-card>
                   </v-flex>
@@ -244,24 +253,70 @@
       </page-container>
     </div>
     <div class="secondary dark--theme">
-      <page-container class="my-5">
-        <v-layout dark row wrap align-center>
-          <v-flex md7>
-            <p class="headline white--text">Download the APP Now!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere tortor sem, a posuere nibh porttitor sit amet. Aliquam tempor maximus sem, pellentesque rhoncus diam lacinia finibus. </p>
+      <page-container class="pa-5">
+        <v-layout
+          dark
+          row
+          wrap
+          align-center
+          justify-center
+          style="min-height:300px;">
+          <v-flex md8>
+            <v-flex md7>
+              <p class="headline white--text">Download the APP Now!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere tortor sem, a posuere nibh porttitor sit amet. Aliquam tempor maximus sem, pellentesque rhoncus diam lacinia finibus. </p>
+            </v-flex>
+            <v-flex md4>
+              <v-layout row wrap>
+                <v-img
+                  max-height="60"
+                  max-width="160"
+                  contain
+                  src="/images/google.png"></v-img>
+                <v-img
+                  max-height="60"
+                  max-width="120"
+                  contain
+                  src="/images/app-store.png"></v-img>
+              </v-layout>
+            </v-flex>
           </v-flex>
-          <v-flex md4>
+        </v-layout>
+      </page-container>
+    </div>
+    <div class="grey darken-3 dark--theme m-footer-note">
+      <page-container class="pa-5">
+        <v-layout
+          dark
+          row
+          wrap
+          justify-center
+          align-center
+          style="min-height:200px;">
+          <v-flex md8>
             <v-layout row wrap>
-              <v-img
-                max-height="60"
-                max-width="160"
-                contain
-                src="/images/google.png"></v-img>
-              <v-img
-                max-height="60"
-                max-width="120"
-                contain
-                src="/images/app-store.png"></v-img>
+              <v-flex>
+                <div>
+                  <p class="headline white--text">Support</p>
+                  <p>
+                    <a href="/">Contact Us</a>
+                  </p>
+                  <p>
+                    <a href="/">FAQ</a>
+                  </p>
+                </div>
+              </v-flex>
+              <v-flex>
+                <div>
+                  <p class="headline white--text">Legal</p>
+                  <p>
+                    <a href="/">Terms and Conditions</a>
+                  </p>
+                  <p>
+                    <a href="/">Privacy Policy</a>
+                  </p>
+                </div>
+              </v-flex>
             </v-layout>
           </v-flex>
         </v-layout>
@@ -298,6 +353,20 @@ export default {
         {
           place: 'Maldives',
           src: '/images/maldives.jpg'
+        }
+      ],
+      features: [
+        {
+          title: 'Supports Multiple Properties',
+          desc: 'Site has different kinds of properties from hotels, apartments, condominium and more.'
+        },
+        {
+          title: 'Easy Booking',
+          desc: 'Quick and easy steps to get your desired booking!'
+        },
+        {
+          title: 'Manage Booking',
+          desc: 'Your booking can be editable from changing dates, special requests and more!'
         }
       ]
     }

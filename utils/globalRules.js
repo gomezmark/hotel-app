@@ -8,6 +8,9 @@ Vue.mixin({
           required: [
             v => !!v || 'Field is required'
           ],
+          name: [
+            v => !!v || 'Email is required'
+          ],
           destination: [
             v => !!v || 'Destination is required'
           ],
@@ -17,5 +20,8 @@ Vue.mixin({
         }
       }
     }
+  },
+  created () {
+    console.log(this.global)
   }
 })
